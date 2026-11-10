@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard Administrativo</title>
+</head>
+<body>
+
+<div class="container-fluid mt-4" th:fragment="content">
+
+    <h1>Dashboard Administrativo</h1>
+    <p>Visão geral das vendas e dos pedidos do Pediu Patrão.</p>
+
+    <div class="row g-3 mt-3">
+
+        <div class="col-md-3">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h6>Faturamento Total</h6>
+                    <h3 id="faturamentoTotal">Carregando...</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h6>Total de Pedidos</h6>
+                    <h3 id="quantidadePedidos">Carregando...</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h6>Pedidos Finalizados</h6>
+                    <h3 id="quantidadeFinalizados">Carregando...</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h6>Pedidos Cancelados</h6>
+                    <h3 id="quantidadeCancelados">Carregando...</h3>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="erroDashboard" class="alert alert-danger d-none mt-3"></div>
+
+    <script th:src="@{/js/dashboard.js}"></script>
+
+</div>
+
+</body>
+</html>
