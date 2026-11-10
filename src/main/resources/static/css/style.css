@@ -63,3 +63,8 @@ body {
         cursor: pointer;
     }
 }
+
+aside {
+    background-color: #343a40;
+    min-height: 100vh;
+}

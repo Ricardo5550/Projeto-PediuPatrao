@@ -11,6 +11,54 @@
     <h1>Dashboard Administrativo</h1>
     <p>Visão geral das vendas e dos pedidos do Pediu Patrão.</p>
 
+    <div class="card shadow-sm mt-3 mb-4">
+        <div class="card-body">
+            <h5 class="mb-3">Filtrar por Período</h5>
+
+            <div class="row g-3 align-items-end">
+
+                <div class="col-md-4">
+                    <label for="dataInicio" class="form-label">
+                        Data Inicial
+                    </label>
+                    <input type="date"
+                           id="dataInicio"
+                           class="form-control">
+                </div>
+
+                <div class="col-md-4">
+                    <label for="dataFim" class="form-label">
+                        Data Final
+                    </label>
+                    <input type="date"
+                           id="dataFim"
+                           class="form-control">
+                </div>
+
+                <div class="col-md-4">
+                    <button type="button"
+                            id="aplicarFiltros"
+                            class="btn btn-primary">
+                        Aplicar Filtros
+                    </button>
+
+                    <button type="button"
+                            id="limparFiltros"
+                            class="btn btn-secondary">
+                        Limpar
+                    </button>
+
+                    <button type="button"
+                            id="atualizarDashboard"
+                            class="btn btn-outline-primary">
+                        Atualizar Dados
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
     <div class="row g-3 mt-3">
 
         <div class="col-md-3">
@@ -51,8 +99,70 @@
 
     </div>
 
+    <div class="row mt-4">
+        <div class="col-12">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title mb-3">
+                        Análise de Vendas por Dia
+                    </h5>
+
+                    <div style="height: 320px;">
+                        <canvas id="graficoVendas"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-4 mb-5">
+        <div class="col-md-6">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title mb-3">
+                        Situação dos Pedidos
+                    </h5>
+
+                    <div style="height: 300px;">
+                        <canvas id="graficoStatus"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title mb-3">
+                        Produtos Mais Vendidos
+                    </h5>
+
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th>Produto</th>
+                                <th>Quantidade Vendida</th>
+                            </tr>
+                            </thead>
+
+                            <tbody id="rankingProdutos">
+                            <tr>
+                                <td colspan="2">
+                                    Carregando produtos...
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div id="erroDashboard" class="alert alert-danger d-none mt-3"></div>
 
+    <script th:src="@{/plugins/chart.js/Chart.min.js}"></script>
     <script th:src="@{/js/dashboard.js}"></script>
 
 </div>
